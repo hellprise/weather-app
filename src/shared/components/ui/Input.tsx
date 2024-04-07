@@ -6,7 +6,7 @@ import {
 	type UseFormSetValue
 } from "react-hook-form"
 
-import { type ISearchCityForm } from "../screens/Home"
+import { type ISearchCityForm } from "./CreateCityForm"
 
 export interface FormInputProps {
 	name: string
@@ -15,10 +15,10 @@ export interface FormInputProps {
 	setValue: UseFormSetValue<ISearchCityForm>
 }
 
-export function Input({ name, label, control, setValue }: FormInputProps) {
+export function Input({ name, label, control }: FormInputProps) {
 	return (
 		<Controller
-			render={({ field: { onChange, value }, fieldState: { error }, formState }) => (
+			render={({ field: { onChange, value }, fieldState: { error } }) => (
 				<TextField
 					helperText={error ? error.message : null}
 					onChange={onChange}
